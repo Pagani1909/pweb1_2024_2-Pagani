@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>Document</title>
+</head>
+<body>
+    <form action="/action_page.html">
+        <fieldset>
+        <legend><strong>Formulário Matricula de Curso</strong></legend>
+            <label for=“pnome">Primeiro nome:</label><br>
+            <input type="text" id="pnome" name="pnome"><br>
+            <label for=“snome">Sobrenome:</label><br>
+            <input type="text" id="snome" name="snome"><br><br>
+
+        <legend><strong>Curso:</strong></legend>
+            <input type="radio" id="tInfo" name="fav_language" value="tInfo">
+            <label for="tInfo">Técnico em Informática</label><br>
+            <input type="radio" id="Grad" name="fav_language" value="Grad">
+            <label for="Grad">Graduação - Análise e Desenvolvimento de Sistemas</label><br>
+            <input type="radio" id="Profs" name="fav_language" value="Profs">
+            <label for="Profs">Profissionalizante - Programação web</label><br><br>
+
+        <legend><strong>Linguagens de programação de sua preferência:</strong></legend>
+            <input type="checkbox" id="Language1" name="Language1" value="Bike">
+            <label for="Language1"> PHP</label><br>
+            <input type="checkbox" id="language2" name="language2" value="Car">
+            <label for="language2"> Java</label><br>
+            <input type="checkbox" id="language3" name="language3" value="Boat">
+            <label for="language3"> Python</label><br><br>
+
+        <strong><label for="turno">Escolha um turno:</label></strong><br>
+        <select name="turno" id="turno">
+            <option value="manha">Manhã</option>
+            <option value=“tarde">Tarde</option>
+            <option value="noite">Noite</option>
+        </select><br><br>
+
+        <strong><label for="browser"> Escolha uma unidade mais próxima a você:</label></strong><>
+        <input list="browsers" name="browser" id="browser">
+        <datalist id="browsers">
+            <option value="Chapecó">
+            <option value="Cel Freitas">
+            <option value="Xaxim">
+            <option value="Xanxerê">
+            <option value="Pinhalzinho">
+        </datalist><br><br>
+
+        <button onclick ="Envio()">Enviar</button>
+        </fieldset>
+        </form>
+
+
+</body>
+</html>
