@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function salvarInformacoes(event) {
+            event.preventDefault(); // Impede o envio do formulário
+            const login = document.getElementById('login').value;
+            const senha = document.getElementById('senha').value;
+            const status = document.getElementById('status').value;
+            const tipo = document.querySelector('input[name="tipo"]:checked').value;
+            const data = document.getElementById('data').value;
+            const perfil = document.querySelector('input[name="perfil"]:checked').value;
+            const observacoes = document.getElementById('obs').value;
+
+            // Capturando os módulos selecionados
+            const modulos = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
+                .map(checkbox => checkbox.value)
+                .join(', ');
+
+            alert(`Login: ${login}\nSenha: ${senha}\nStatus: ${status}\nTipo: ${tipo}\nData de Criação: ${data}\nPerfil: ${perfil}\nObservações: ${observacoes}\nMódulos: ${modulos}`);
+        }
+
+        function excluirUsuario() {
+            alert('Usuário excluído!');
+        }
+    </script>
+</head>
+<body>
+    <form action="/action_page.html">
+        <fieldset>
+        <legend><strong>Sistema de Gestão Acadêmica</strong></legend><br>
+        <strong><legend>Manutenção dos usuários do Sistema Interno</legend></strong><br>
+            <label for="">Login:</label><br>
+            <input type="text" id="login" name="login"><br>
+
+            <label for= "">Senha:</label><br>
+            <input type="text" id="senha" name="senha"><br><br>
+
+        <strong><label for="Status">Status:</label></strong><br>
+            <select name="status" id="status">
+                <option value="inativo">inativo</option>
+                <option value= "ativo">Ativo</option>
+            </select><br><br>
+
+        <legend><strong>Tipo:</strong></legend>
+            <input type="radio" id="tipo" name="tipo" value="Técnico">
+            <label for="">Técnico</label>
+            <input type="radio" id="tipo" name="tipo" value="Professor">
+            <label for="">Professor</label>
+            <input type="radio" id="tipo" name="tipo" value="aluno">
+            <label for="">Aluno</label><br><br>
+
+        <strong><label for="data">Data de Criação:</label></strong><br>
+            <input type="date" id="data" name="data"><br><br>
+
+        <legend><strong>Perfil:</strong></legend>
+            <input type="radio" id="perfil" name="perfil" value="Convidado">
+            <label for="">Convidado</label>
+            <input type="radio" id="perfil" name="perfil" value="Administrador">
+            <label for="">Administrador</label><br><br>
+
+        <legend><strong>Observações:</strong></legend>
+            <textarea id="obs" name="obs" rows="8" cols="30">
+            </textarea>
+
+            <legend><strong>Módulos:</strong></legend>
+            <input type="checkbox" id="Mod1" name="Mod1" value="compras">
+            <label for="Compras"> Compras</label>
+             <input type="checkbox" id="Mod2" name="Mod2" value="biblioteca">
+            <label for="Biblioteca"> Biblioteca</label>
+            <input type="checkbox" id="Mod3" name="Mod3" value="academico">
+            <label for="Academico"> Acadêmico</label><br>
+             <input type="checkbox" id="Mod4" name="Mod4" value="Document">
+            <label for="Document"> Ducumentação</label>
+            <input type="checkbox" id="Mod5" name="Mod5" value="Recursos Humanos">
+            <label for="Recursos Humanos"> Recursos Humanos</label><br><br>
+
+            <input type="button" value="Salvar" onclick="salvarInformacoes(event)">
+            <input type="button" value="Excluir" onclick="excluirUsuario()">
+        </form>
+</body>
+</html>
