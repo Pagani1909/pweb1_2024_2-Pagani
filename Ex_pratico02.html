@@ -6,7 +6,7 @@
     <title>Document</title>
     <script>
         function salvarInformacoes(event) {
-            event.preventDefault(); // Impede o envio do formulário
+            event.preventDefault();
             const login = document.getElementById('login').value;
             const senha = document.getElementById('senha').value;
             const status = document.getElementById('status').value;
@@ -15,7 +15,7 @@
             const perfil = document.querySelector('input[name="perfil"]:checked').value;
             const observacoes = document.getElementById('obs').value;
 
-            // Capturando os módulos selecionados
+
             const modulos = Array.from(document.querySelectorAll('input[type="checkbox"]:checked'))
                 .map(checkbox => checkbox.value)
                 .join(', ');
